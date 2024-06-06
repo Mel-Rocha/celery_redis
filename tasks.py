@@ -4,7 +4,7 @@ import time
 
 from celery import Celery
 
-REDIS_HOST = os.getenv('REDIS_HOST', 'localhost')
+REDIS_HOST = os.getenv('REDIS_HOST', '127.0.0.1')
 REDIS_PORT = os.getenv('REDIS_PORT', 6379)
 
 celery = Celery(
