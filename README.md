@@ -48,5 +48,17 @@ docker exec -it my-redis redis-cli ping
 ### Celery
 Inicie o worker do celery
 ```bash
-celery -A tasks worker --loglevel=info --without-gossip --without-mingle --without-heartbeat -Ofair
+celery -A tasks worker --loglevel=info -P eventlet
+```
+
+## Útil
+
+Listar os processo do celery em execução
+```bash
+tasklist | findstr celery
+```
+
+Finalizar o processo do celery (substituir o <PID> pelo id real do processo)
+```bash
+taskkill /PID <PID> /F
 ```
